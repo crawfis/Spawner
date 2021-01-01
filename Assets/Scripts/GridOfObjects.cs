@@ -1,31 +1,27 @@
 using CrawfisSoftware.Spawner;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GridOfObjects : MonoBehaviour
 {
-    [Range(2, 256)]
-    public int numberAlongX = 10;
-    [Range(2, 256)]
-    public int numberAlongZ = 10;
-    [SerializeField]
-    private GameObject[] prefabs;
-    public Bounds bounds;
-    public Vector2 padding;
-    public string tileName = "TileOfObjects_0000";
-    public Vector3 maxJitter;
-    public Vector3 minRotation;
-    public Vector3 maxRotation;
-    public Vector3 minScale;
-    public Vector3 maxScale;
-    public Color minColorShift;
-    public Color maxColorShift;
-    public Vector2 tileSizeOutputOnly;
+    [SerializeField] [Range(2, 256)] private int numberAlongX = 10;
+    [SerializeField] [Range(2, 256)] private int numberAlongZ = 10;
+    [SerializeField] private GameObject[] prefabs;
+    [SerializeField] private Bounds bounds;
+    [SerializeField] private Vector2 padding;
+    [SerializeField] private string tileName = "TileOfObjects_0000";
+    [SerializeField] private Vector3 maxJitter;
+    [SerializeField] private Vector3 minRotation;
+    [SerializeField] private Vector3 maxRotation;
+    [SerializeField] private Vector3 minScale;
+    [SerializeField] private Vector3 maxScale;
+    [SerializeField] private Color minColorShift;
+    [SerializeField] private Color maxColorShift;
+    [SerializeField] private Vector2 tileSizeOutputOnly;
+    [SerializeField] private List<Material> materialList;
+
     private System.Random random = new System.Random();
     private GameObject tileBase;
-    [SerializeField]
-    private List<Material> materialList;
 
     private async System.Threading.Tasks.Task Start()
     {
