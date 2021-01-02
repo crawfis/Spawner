@@ -1,3 +1,4 @@
+using CrawfisSoftware.PointProvider;
 using CrawfisSoftware.Spawner;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,7 +46,7 @@ public class GridOfObjects : MonoBehaviour
         prefabTransformModifier.AddTransformModifier(jitter);
         var rotator = new TransformRotationJitter(minRotation, maxRotation);
         prefabTransformModifier.AddTransformModifier(rotator);
-        var scaler = new TransformScaleJitter(minScale, maxScale);
+        var scaler = new TransformRandomScaleWithinRange(minScale, maxScale);
         prefabTransformModifier.AddTransformModifier(scaler);
 
         var prefabModifiers = new List<IPrefabModifierAsync>();
@@ -70,8 +71,9 @@ public class GridOfObjects : MonoBehaviour
         var emptySpawner = new Spawner(new PrefabSelectorEmptyGameObject(), rootObjectModifiers);
 
         tileBase = new GameObject(tileName);
-        var positions = DeterminePositions();
-        foreach(var gameObject in emptySpawner.SpawnStream(positions, tileBase.transform))
+        //var positions = DeterminePositions();
+        var positions = new PointProviderGrid(numberAlongX, numberAlongZ, bounds.size, bounds.center);
+        foreach (var gameObject in emptySpawner.SpawnStream(positions, tileBase.transform))
         {
             ;
         }

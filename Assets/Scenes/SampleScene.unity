@@ -149,40 +149,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 187954489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec1a0f8296887ae4fac58f483a2ae92e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2706fcd7f67af4a49a8137ec2aeea85f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberAlongX: 17
-  numberAlongZ: 17
+  numberAlongX: 50
+  numberAlongZ: 34
   prefabs:
-  - {fileID: 5683215763084779144, guid: 515b2320c8ee91d478c68a60fff18749, type: 3}
-  - {fileID: 5683215763084779144, guid: 515b2320c8ee91d478c68a60fff18749, type: 3}
+  - {fileID: 5683215763084779144, guid: 216ef39f96c20ea41bc298c8421217c6, type: 3}
+  - {fileID: 5683215763084779144, guid: 216ef39f96c20ea41bc298c8421217c6, type: 3}
   bounds:
     m_Center: {x: 0, y: 0.5, z: 0}
     m_Extent: {x: 0.5, y: 1, z: 0.5}
-  padding: {x: -0.15, y: -0.15}
+  padding: {x: 0, y: 0}
   tileName: TileOfObjects_0000
-  maxJitter: {x: 0.15, y: 0, z: 0.1}
+  maxJitter: {x: 0, y: 0, z: 0}
   minRotation: {x: 0, y: 0, z: 0}
-  maxRotation: {x: 2, y: 360, z: 2}
-  minScale: {x: 0.9, y: 1, z: 0.9}
+  maxRotation: {x: 0, y: 0, z: 0}
+  minScale: {x: 1, y: 1, z: 1}
   maxScale: {x: 1, y: 1, z: 1}
-  minColorShift: {r: 0.122641504, g: 0.11647925, b: 0.10239408, a: 0}
-  maxColorShift: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
-  tileSizeOutputOnly: {x: 14.45, y: 14.45}
+  minColorShift: {r: 0.7264151, g: 0.7229886, b: 0.7229886, a: 0}
+  maxColorShift: {r: 1, g: 1, b: 1, a: 0}
+  tileSizeOutputOnly: {x: 50, y: 34}
   materialList:
-  - {fileID: 2100000, guid: dbc448958a68048479bd969ec33a88c2, type: 2}
-  - {fileID: 2100000, guid: dbc448958a68048479bd969ec33a88c2, type: 2}
-  - {fileID: 2100000, guid: 93aa21178239aeb48a16f98501028ed3, type: 2}
-  - {fileID: 2100000, guid: 59c198feeec345549a0903fd7e00a3b6, type: 2}
-  - {fileID: 2100000, guid: 606bafdc1fed5ce4dad42268feac446c, type: 2}
-  - {fileID: 2100000, guid: 10a3b422f55699942b6ecca64ccd2003, type: 2}
-  - {fileID: 2100000, guid: 6efad53aff6549547afdeac14dce4ab0, type: 2}
-  - {fileID: 2100000, guid: 7ecb4f8d6b3bd474994a8b8a0eec8557, type: 2}
-  - {fileID: 2100000, guid: bd65e09adddf57d4fa7fd52ddcb078f9, type: 2}
-  - {fileID: 2100000, guid: c8e5c8bd28660cd4aa7f36a19f43f481, type: 2}
-  - {fileID: 2100000, guid: e16f2888fdb15aa4191e92b409126df7, type: 2}
-  - {fileID: 2100000, guid: 3eb37dcf87c145749a0b8ebddfc581b5, type: 2}
+  - {fileID: 2100000, guid: df0ed78bf63f7bd48b190413385ac816, type: 2}
+  - {fileID: 2100000, guid: 5446c578479149e47be2fd0dcf9940d0, type: 2}
 --- !u!4 &187954491
 Transform:
   m_ObjectHideFlags: 0
@@ -283,13 +273,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.6875312, y: 0, z: 0, w: 0.7261549}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 86.87, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

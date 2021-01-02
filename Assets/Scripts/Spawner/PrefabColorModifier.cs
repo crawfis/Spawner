@@ -4,14 +4,24 @@ using UnityEngine;
 
 namespace CrawfisSoftware.Spawner
 {
+    /// <summary>
+    /// Modify the material color with a color within a random range (using RGBA).
+    /// </summary>
     public class PrefabColorModifier : IPrefabModifierAsync
     {
         private readonly RandomColorWithinRange randomColor;
-        public PrefabColorModifier(Color minScale, Color maxScale)
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="color1">A color for one of the bounds.</param>
+        /// <param name="color2">Color for the other bounds.</param>
+        public PrefabColorModifier(Color color1, Color color2)
         {
-            randomColor = new RandomColorWithinRange(minScale, maxScale);
+            randomColor = new RandomColorWithinRange(color1, color2);
         }
 
+        /// <inheritdoc/>
         public async Task ApplyAsync(GameObject prefab)
         {
             Renderer renderer = prefab.GetComponent<Renderer>();
