@@ -149,30 +149,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 187954489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2706fcd7f67af4a49a8137ec2aeea85f, type: 3}
+  m_Script: {fileID: 11500000, guid: ec1a0f8296887ae4fac58f483a2ae92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberAlongX: 50
-  numberAlongZ: 34
+  numberAlongX: 10
+  numberAlongZ: 10
   prefabs:
-  - {fileID: 5683215763084779144, guid: 216ef39f96c20ea41bc298c8421217c6, type: 3}
-  - {fileID: 5683215763084779144, guid: 216ef39f96c20ea41bc298c8421217c6, type: 3}
+  - {fileID: 5683215763084779144, guid: 515b2320c8ee91d478c68a60fff18749, type: 3}
+  - {fileID: 5683215763084779144, guid: 515b2320c8ee91d478c68a60fff18749, type: 3}
   bounds:
     m_Center: {x: 0, y: 0.5, z: 0}
-    m_Extent: {x: 0.5, y: 1, z: 0.5}
+    m_Extent: {x: 0.35, y: 0.5, z: 0.35}
   padding: {x: 0, y: 0}
   tileName: TileOfObjects_0000
-  maxJitter: {x: 0, y: 0, z: 0}
+  maxJitter: {x: 0.1, y: 0, z: 0.1}
   minRotation: {x: 0, y: 0, z: 0}
-  maxRotation: {x: 0, y: 0, z: 0}
+  maxRotation: {x: 0, y: 360, z: 0}
   minScale: {x: 1, y: 1, z: 1}
   maxScale: {x: 1, y: 1, z: 1}
-  minColorShift: {r: 0.7264151, g: 0.7229886, b: 0.7229886, a: 0}
-  maxColorShift: {r: 1, g: 1, b: 1, a: 0}
-  tileSizeOutputOnly: {x: 50, y: 34}
+  minColorShift: {r: 0.5849056, g: 0.56007475, b: 0.56007475, a: 0}
+  maxColorShift: {r: 1, g: 0.9234214, b: 0.5518868, a: 0}
+  tileSizeOutputOnly: {x: 7, y: 7}
   materialList:
-  - {fileID: 2100000, guid: df0ed78bf63f7bd48b190413385ac816, type: 2}
-  - {fileID: 2100000, guid: 5446c578479149e47be2fd0dcf9940d0, type: 2}
+  - {fileID: 2100000, guid: dbc448958a68048479bd969ec33a88c2, type: 2}
+  - {fileID: 2100000, guid: 93aa21178239aeb48a16f98501028ed3, type: 2}
+  - {fileID: 2100000, guid: 59c198feeec345549a0903fd7e00a3b6, type: 2}
+  - {fileID: 2100000, guid: 606bafdc1fed5ce4dad42268feac446c, type: 2}
+  - {fileID: 2100000, guid: 10a3b422f55699942b6ecca64ccd2003, type: 2}
+  - {fileID: 2100000, guid: 6efad53aff6549547afdeac14dce4ab0, type: 2}
+  - {fileID: 2100000, guid: 7ecb4f8d6b3bd474994a8b8a0eec8557, type: 2}
+  - {fileID: 2100000, guid: bd65e09adddf57d4fa7fd52ddcb078f9, type: 2}
+  - {fileID: 2100000, guid: c8e5c8bd28660cd4aa7f36a19f43f481, type: 2}
+  - {fileID: 2100000, guid: e16f2888fdb15aa4191e92b409126df7, type: 2}
+  - {fileID: 2100000, guid: e5bb355cdd9270d42b041ed89795c6f9, type: 2}
+  - {fileID: 2100000, guid: e1457bf7518756e458021d50501173b3, type: 2}
+  - {fileID: 2100000, guid: 33bf72f9bcc5672409e35a98c267e257, type: 2}
 --- !u!4 &187954491
 Transform:
   m_ObjectHideFlags: 0

@@ -72,7 +72,7 @@ public class GridOfObjects : MonoBehaviour
 
         tileBase = new GameObject(tileName);
         //var positions = DeterminePositions();
-        var positions = new PointProviderGrid(numberAlongX, numberAlongZ, bounds.size, bounds.center);
+        var positions = new PointProviderGrid(numberAlongX, numberAlongZ, new Vector2(bounds.size.x, bounds.size.z), new Vector2(bounds.center.x, bounds.center.z));
         foreach (var gameObject in emptySpawner.SpawnStream(positions, tileBase.transform))
         {
             ;
