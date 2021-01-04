@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 187954491}
   - component: {fileID: 187954490}
   m_Layer: 0
-  m_Name: GridOfObjects
+  m_Name: GridOfBarrels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,38 +149,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 187954489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2706fcd7f67af4a49a8137ec2aeea85f, type: 3}
+  m_Script: {fileID: 11500000, guid: ec1a0f8296887ae4fac58f483a2ae92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numberAlongX: 10
   numberAlongZ: 10
   prefabs:
-  - {fileID: 5683215763084779144, guid: 216ef39f96c20ea41bc298c8421217c6, type: 3}
-  - {fileID: 5683215763084779144, guid: 216ef39f96c20ea41bc298c8421217c6, type: 3}
+  - {fileID: 5683215763084779144, guid: 515b2320c8ee91d478c68a60fff18749, type: 3}
+  - {fileID: 5683215763084779144, guid: 515b2320c8ee91d478c68a60fff18749, type: 3}
   bounds:
     m_Center: {x: 0, y: 0.5, z: 0}
     m_Extent: {x: 0.4, y: 1, z: 0.4}
   padding: {x: 0, y: 0}
-  tileName: TileOfObjects_0000
+  tileName: TileOfBarrels_0000
   maxJitter: {x: 0.1, y: 0, z: 0.1}
-  minRotation: {x: 0, y: -2, z: 0}
-  maxRotation: {x: 0, y: 2, z: 0}
+  minRotation: {x: 0, y: 0, z: 0}
+  maxRotation: {x: 0, y: 360, z: 0}
   minScale: {x: 1, y: 1, z: 1}
   maxScale: {x: 1, y: 1, z: 1}
-  minColorShift: {r: 0.46226418, g: 0.44700074, b: 0.44700074, a: 0}
-  maxColorShift: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0}
+  minColorShift: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 0}
+  maxColorShift: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
   tileSizeOutputOnly: {x: 8, y: 8}
   materialList:
-  - {fileID: 2100000, guid: 4550545703b8e924b99a7037c2e6a8f1, type: 2}
-  - {fileID: 2100000, guid: 4f0cdee3148630e41bd6fc228eceb91f, type: 2}
-  - {fileID: 2100000, guid: f624ced2036d04741bf969904332873f, type: 2}
-  - {fileID: 2100000, guid: 96c28951da0f1bb49a974fc06bc86017, type: 2}
-  - {fileID: 2100000, guid: 1cdd45c54512ed443889de5238ce6029, type: 2}
-  - {fileID: 2100000, guid: 4bc1cd4644cbd2642871b693d39045d4, type: 2}
-  - {fileID: 2100000, guid: 3243a016e6e6542469179980f752b78e, type: 2}
-  - {fileID: 2100000, guid: d1728988b93838d4b973c44f15e4c758, type: 2}
-  - {fileID: 2100000, guid: 6e67d9df50730eb479d60fabd2d07f08, type: 2}
-  - {fileID: 2100000, guid: 8340494d45e04ad4e977de9bc2d9ce18, type: 2}
+  - {fileID: 2100000, guid: c836ef42cad597d4aafe6f9817420231, type: 2}
+  - {fileID: 2100000, guid: 8efa107b58bbc214183792a4030e4637, type: 2}
+  - {fileID: 2100000, guid: e3137bc81d5d90044b2c1e79154eeb32, type: 2}
+  - {fileID: 2100000, guid: f32c6b31c9e021d4c8a0f6361e716573, type: 2}
+  - {fileID: 2100000, guid: 9966e7b3ecd0b3e40953ee8859904e24, type: 2}
+  - {fileID: 2100000, guid: 2b8063d9f4047104fb368f3edf9317ac, type: 2}
+  - {fileID: 2100000, guid: 931e1ca29c27dea45ab3308df2018ce9, type: 2}
+  - {fileID: 2100000, guid: adaea6559cec3fb4d8684d23ba23d3d7, type: 2}
+  - {fileID: 2100000, guid: 735add5fcef4af0418406f770dc7d088, type: 2}
 --- !u!4 &187954491
 Transform:
   m_ObjectHideFlags: 0
