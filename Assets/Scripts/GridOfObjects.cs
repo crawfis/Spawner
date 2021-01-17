@@ -53,7 +53,7 @@ public class GridOfObjects : MonoBehaviour
         //var colorModifier = new PrefabColorModifier(minColorShift, maxColorShift);
         var colorModifier = new PrefabMaterialSelectionModifier(materialList);
         prefabModifiers.Add(colorModifier);
-        var secondGridOffset = new PrefabTransformModifier(new Vector3(0.0f, 1.05f, 0.0f), Vector3.zero, Vector3.one);
+        var secondGridOffset = new PrefabTransformModifier(new Vector3(0.0f, 0.6f, 0.0f), Vector3.zero, Vector3.one);
         var secondPrefabTransformModifier = new PrefabTransformModifierComposite();
         secondPrefabTransformModifier.AddTransformModifier(secondGridOffset);
         //secondPrefabTransformModifier.AddTransformModifier(jitter);
@@ -66,13 +66,14 @@ public class GridOfObjects : MonoBehaviour
 
         var secondPrefabSpawner = new SpawnerMaybe(new PrefabSelectorInstantiation(prefabs[1]), secondPrefabModifiers, MiddleOnly);
 
-        var prefabSpawner = new Spawner(new PrefabSelectorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
+        //var prefabSpawner = new Spawner(new PrefabSelectorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
+        var prefabSpawner = new Spawner(new PrefabSelectorInstantiation(prefabs[0]), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
         var rootObjectModifiers = new List<IPrefabModifierAsync>() { prefabSpawner };
         var emptySpawner = new Spawner(new PrefabSelectorEmptyGameObject(), rootObjectModifiers);
 
         tileBase = new GameObject(tileName);
         //var positions = DeterminePositions();
-        var positions = new PointProviderGrid(numberAlongX, numberAlongZ, new Vector2(bounds.size.x, bounds.size.z), new Vector2(bounds.center.x, bounds.center.z));
+        var positions = new PointProviderGrid(numberAlongX, numberAlongZ, bounds.size, bounds.center);
         foreach (var gameObject in emptySpawner.SpawnStream(positions, tileBase.transform))
         {
             ;
