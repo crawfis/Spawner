@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace CrawfisSoftware.PointProvider
@@ -7,12 +8,13 @@ namespace CrawfisSoftware.PointProvider
     /// <summary>
     /// Creates a stream (IEnumerator) of positions (Vector3's) on a grid.
     /// </summary>
-    public class PointProviderGrid : IEnumerable<Vector3>
+    public class PointProviderGrid : IPositionGenerator, IEnumerable<Vector3>
     {
         private int nx = 10;
         private int ny = 10;
         private Vector3 gridSize;
         private Vector3 offset;
+        private IEnumerator<Vector3> enumerator;
 
         /// <summary>
         /// Constructor.
@@ -27,6 +29,7 @@ namespace CrawfisSoftware.PointProvider
             this.ny = ny;
             gridSize = prefabSize;
             this.offset = offset;
+            this.enumerator = GetEnumerator();
         }
 
         /// <summary>
@@ -50,6 +53,11 @@ namespace CrawfisSoftware.PointProvider
                 }
                 position.x += gridSize.x;
             }
+        }
+
+        public IList<Vector3> GetNext()
+        {
+            return this.ToList();
         }
 
         /// <summary>

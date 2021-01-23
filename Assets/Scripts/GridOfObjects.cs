@@ -53,23 +53,23 @@ public class GridOfObjects : MonoBehaviour
         //var colorModifier = new PrefabColorModifier(minColorShift, maxColorShift);
         var colorModifier = new PrefabMaterialSelectionModifier(materialList);
         prefabModifiers.Add(colorModifier);
-        var secondGridOffset = new PrefabTransformModifier(new Vector3(0.0f, 0.6f, 0.0f), Vector3.zero, Vector3.one);
+        var secondGridOffset = new PrefabTransformModifier(new Vector3(0.0f, 0.8f, 0.0f), Vector3.zero, Vector3.one);
         var secondPrefabTransformModifier = new PrefabTransformModifierComposite();
         secondPrefabTransformModifier.AddTransformModifier(secondGridOffset);
         //secondPrefabTransformModifier.AddTransformModifier(jitter);
         secondPrefabTransformModifier.AddTransformModifier(rotator);
         secondPrefabTransformModifier.AddTransformModifier(scaler);
         var secondPrefabModifiers = new List<IPrefabModifierAsync>();
-        var secondColorModifier = new PrefabColorModifier(minColorShift, maxColorShift);
+        var secondColorModifier = new PrefabColorModifier(minColorShift, maxColorShift, true);
         secondPrefabModifiers.Add(secondColorModifier);
         secondPrefabModifiers.Add(secondPrefabTransformModifier);
 
-        var secondPrefabSpawner = new SpawnerMaybe(new PrefabSelectorInstantiation(prefabs[1]), secondPrefabModifiers, MiddleOnly);
+        var secondPrefabSpawner = new SpawnerMaybe(new PrefabGeneratorInstantiation(prefabs[1]), secondPrefabModifiers, MiddleOnly);
 
-        //var prefabSpawner = new Spawner(new PrefabSelectorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
-        var prefabSpawner = new Spawner(new PrefabSelectorInstantiation(prefabs[0]), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
+        var prefabSpawner = new Spawner(new PrefabGeneratorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
+        //var prefabSpawner = new Spawner(new PrefabSelectorInstantiation(prefabs[0]), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
         var rootObjectModifiers = new List<IPrefabModifierAsync>() { prefabSpawner };
-        var emptySpawner = new Spawner(new PrefabSelectorEmptyGameObject(), rootObjectModifiers);
+        var emptySpawner = new Spawner(new PrefabGeneratorEmptyGameObject(), rootObjectModifiers);
 
         tileBase = new GameObject(tileName);
         //var positions = DeterminePositions();

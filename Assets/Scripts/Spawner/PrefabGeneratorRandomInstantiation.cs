@@ -7,7 +7,7 @@ namespace CrawfisSoftware.Spawner
     /// <summary>
     /// Create a new game object using a template randomly from a list of templates.
     /// </summary>
-    public class PrefabSelectorRandomInstantiation : IPrefabSelectorAsync
+    public class PrefabGeneratorRandomInstantiation : IPrefabGeneratorAsync
     {
         private readonly IList<GameObject> prefabList;
         private readonly System.Random random;
@@ -17,7 +17,7 @@ namespace CrawfisSoftware.Spawner
         /// </summary>
         /// <param name="prefabList">A list of prefab templates.</param>
         /// <param name="random">(optional) A System.Random random number generator.</param>
-        public PrefabSelectorRandomInstantiation(IList<GameObject> prefabList, System.Random random = null)
+        public PrefabGeneratorRandomInstantiation(IList<GameObject> prefabList, System.Random random = null)
         {
             this.prefabList = prefabList;
             this.random = random;

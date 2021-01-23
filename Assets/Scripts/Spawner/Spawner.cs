@@ -6,9 +6,9 @@ namespace CrawfisSoftware.Spawner
     /// <summary>
     /// Flexible Spawner of GameObjects. Instances are also IPrefabModifierAsync 
     /// </summary>
-    public class Spawner : IPrefabModifierAsync
+    public class Spawner : IPrefabModifierAsync, ISpawner
     {
-        private readonly IPrefabSelectorAsync prefabSelector;
+        private readonly IPrefabGeneratorAsync prefabSelector;
         private readonly IList<IPrefabModifierAsync> prefabModifiers;
         private int count = 0;
 
@@ -17,7 +17,7 @@ namespace CrawfisSoftware.Spawner
         /// </summary>
         /// <param name="prefabSelector">Provides the new GameObjects when requested.</param>
         /// <param name="prefabModifiers">Used to perform any modifications after a game object is created.</param>
-        public Spawner(IPrefabSelectorAsync prefabSelector, IList<IPrefabModifierAsync> prefabModifiers)
+        public Spawner(IPrefabGeneratorAsync prefabSelector, IList<IPrefabModifierAsync> prefabModifiers)
         {
             this.prefabSelector = prefabSelector;
             this.prefabModifiers = prefabModifiers;
@@ -31,7 +31,7 @@ namespace CrawfisSoftware.Spawner
         /// <returns></returns>
         public IEnumerable<GameObject> SpawnStream(IEnumerable<Vector3> positionGenerator, Transform parentTransform)
         {
-            foreach(Vector3 position in positionGenerator)
+            foreach (Vector3 position in positionGenerator)
             {
                 System.Threading.Tasks.Task<GameObject> task = SpawnAsync(position, parentTransform);
                 yield return task.GetAwaiter().GetResult();

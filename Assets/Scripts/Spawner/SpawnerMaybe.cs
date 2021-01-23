@@ -18,7 +18,7 @@ namespace CrawfisSoftware.Spawner
         /// <param name="prefabSelector">Provides the new GameObjects when requested.</param>
         /// <param name="prefabModifiers">Used to perform any modifications after a game object is created.</param>
         /// <param name="predicate">A predicate function that determines at each position whether to return null or create a new GameObject.</param>
-        public SpawnerMaybe(IPrefabSelectorAsync prefabSelector, IList<IPrefabModifierAsync> prefabModifiers, Func<Vector3, GameObject, bool> predicate) 
+        public SpawnerMaybe(IPrefabGeneratorAsync prefabSelector, IList<IPrefabModifierAsync> prefabModifiers, Func<Vector3, GameObject, bool> predicate) 
             : base(prefabSelector, prefabModifiers)
         {
             this.predicate = predicate;

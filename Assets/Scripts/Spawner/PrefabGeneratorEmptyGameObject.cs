@@ -6,7 +6,7 @@ namespace CrawfisSoftware.Spawner
     /// <summary>
     /// Creates a new Unity Empty GameObject.
     /// </summary>
-    public class PrefabSelectorEmptyGameObject : IPrefabSelectorAsync
+    public class PrefabGeneratorEmptyGameObject : IPrefabGeneratorAsync
     {
         /// <inheritdoc/>
         public async Task<GameObject> CreateAsync(Vector3 position, Spawner spawner, int count)

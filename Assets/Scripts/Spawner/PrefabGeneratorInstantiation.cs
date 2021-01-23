@@ -6,7 +6,7 @@ namespace CrawfisSoftware.Spawner
     /// <summary>
     /// Creates new game objects using an existing game object as a template.
     /// </summary>
-    public class PrefabSelectorInstantiation : IPrefabSelectorAsync
+    public class PrefabGeneratorInstantiation : IPrefabGeneratorAsync
     {
         private readonly GameObject prefab;
 
@@ -14,7 +14,7 @@ namespace CrawfisSoftware.Spawner
         /// Constructor.
         /// </summary>
         /// <param name="prefab">The game object to use as a template for new game objects.</param>
-        public PrefabSelectorInstantiation(GameObject prefab)
+        public PrefabGeneratorInstantiation(GameObject prefab)
         {
             this.prefab = prefab;
         }

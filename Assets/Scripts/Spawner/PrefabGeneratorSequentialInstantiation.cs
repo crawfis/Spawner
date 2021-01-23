@@ -7,7 +7,7 @@ namespace CrawfisSoftware.Spawner
     /// <summary>
     /// Create a new game object from a list (in order).
     /// </summary>
-    public class PrefabSelectorSequentialInstantiation : IPrefabSelectorAsync
+    public class PrefabGeneratorSequentialInstantiation : IPrefabGeneratorAsync
     {
         private readonly IList<GameObject> prefabList;
         private int index = 0;
@@ -16,7 +16,7 @@ namespace CrawfisSoftware.Spawner
         /// Constructor.
         /// </summary>
         /// <param name="prefabList">A list of game objects to use as a template (not copied).</param>
-        public PrefabSelectorSequentialInstantiation(IList<GameObject> prefabList)
+        public PrefabGeneratorSequentialInstantiation(IList<GameObject> prefabList)
         {
             this.prefabList = prefabList;
         }
