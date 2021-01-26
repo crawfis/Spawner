@@ -14,7 +14,6 @@ namespace CrawfisSoftware.PointProvider
         private int ny = 10;
         private Vector3 gridSize;
         private Vector3 offset;
-        private IEnumerator<Vector3> enumerator;
 
         /// <summary>
         /// Constructor.
@@ -29,7 +28,6 @@ namespace CrawfisSoftware.PointProvider
             this.ny = ny;
             gridSize = prefabSize;
             this.offset = offset;
-            this.enumerator = GetEnumerator();
         }
 
         /// <summary>
@@ -38,24 +36,18 @@ namespace CrawfisSoftware.PointProvider
         /// <returns>A stream of Vector3's.</returns>
         public IEnumerator<Vector3> GetEnumerator()
         {
-            //Vector3 position = new Vector3(-offset.x, 0, -offset.y); // Recenter to (0,y,0)
-            Vector3 position = -offset; // Recenter to (0,y,0)
-
-            position.x += gridSize.x / 2;
-            // Create Parent
-            for (int i = 0; i < nx; i++)
+            var enumerable = CreatePoints2D.Grid(nx, ny, new Vector2(gridSize.x, gridSize.z), new Vector2(offset.x, offset.z));
+            var enumerable2 = Point2DTransforms.Jitter(enumerable, new Vector2(0.1f,0.1f));
+            var enumerable3 = Point2DTransforms.MirrorHorizontal(enumerable2);
+            var enumerable4 = Point2DTransforms.MirrorVertical(enumerable3);
+            var enumerable5 = EnumerableHelpers.Shuffle(enumerable4.ToList());
+            foreach (Vector2 gridPoint in enumerable5)
             {
-                position.z = -offset.z + gridSize.z / 2;
-                for (int j = 0; j < ny; j++)
-                {
-                    yield return position;
-                    position.z += gridSize.z;
-                }
-                position.x += gridSize.x;
+                yield return new Vector3(gridPoint.x, 0, gridPoint.y);
             }
         }
 
-        public IList<Vector3> GetNext()
+        public IList<Vector3> GetNextSet()
         {
             return this.ToList();
         }

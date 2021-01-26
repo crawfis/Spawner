@@ -1,6 +1,8 @@
+using CrawfisSoftware;
 using CrawfisSoftware.PointProvider;
 using CrawfisSoftware.Spawner;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GridOfObjects : MonoBehaviour
@@ -43,7 +45,7 @@ public class GridOfObjects : MonoBehaviour
 
         var prefabTransformModifier = new PrefabTransformModifierComposite();
         var jitter = new TransformPositionJitter(-maxJitter, maxJitter);
-        prefabTransformModifier.AddTransformModifier(jitter);
+        //prefabTransformModifier.AddTransformModifier(jitter);
         var rotator = new TransformRotationJitter(minRotation, maxRotation);
         prefabTransformModifier.AddTransformModifier(rotator);
         var scaler = new TransformRandomScaleWithinRange(minScale, maxScale);
@@ -73,8 +75,14 @@ public class GridOfObjects : MonoBehaviour
 
         tileBase = new GameObject(tileName);
         //var positions = DeterminePositions();
-        var positions = new PointProviderGrid(numberAlongX, numberAlongZ, bounds.size, bounds.center);
-        foreach (var gameObject in emptySpawner.SpawnStream(positions, tileBase.transform))
+        //var positions = new PointProviderGrid(numberAlongX, numberAlongZ, bounds.size, bounds.center);
+        var enumerable = CreatePoints2D.Grid(numberAlongX, numberAlongZ, new Vector2(bounds.size.x, bounds.size.z), new Vector2(bounds.center.x, bounds.center.z));
+        var enumerable2 = Point2DTransforms.Jitter(enumerable, new Vector2(0.1f, 0.1f));
+        var enumerable3 = Point2DTransforms.MirrorHorizontal(enumerable2);
+        var enumerable4 = Point2DTransforms.MirrorVertical(enumerable3);
+        var enumerable5 = EnumerableHelpers.Shuffle(enumerable4.ToList());
+        var enumerable6 = Point2DTransforms.LiftXZto3D(enumerable5, 0);
+        foreach (var gameObject in emptySpawner.SpawnStream(enumerable6, tileBase.transform))
         {
             ;
         }
@@ -86,11 +94,12 @@ public class GridOfObjects : MonoBehaviour
         const float border = 1;
         float x = parent.transform.parent.transform.localPosition.x;
         float z = parent.transform.parent.transform.localPosition.z;
-        if ((x > border) && x < (tileSizeOutputOnly.x-border))
+        //if ((x > border) && x < (tileSizeOutputOnly.x-border))
         {
-            if((z > border) && random.Next(100) > 70)
-            {
-                return true;
+            //if ((z > border) && random.Next(100) > 70)
+                if (random.Next(100) > 70)
+                {
+                    return true;
             }
         }
         return false;

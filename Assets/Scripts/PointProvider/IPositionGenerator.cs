@@ -4,6 +4,6 @@ namespace CrawfisSoftware.PointProvider
 {
     public interface IPositionGenerator
     {
-        IList<UnityEngine.Vector3> GetNext();
+        IList<UnityEngine.Vector3> GetNextSet();
     }
 }

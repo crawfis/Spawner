@@ -16,7 +16,7 @@ namespace CrawfisSoftware.PointProvider
         public bool ValidPoint(Vector3 position)
         {
             if (gridPredicate == null) return true;
-            var gridIndex = positionToGridMap(position);
+            Vector2Int gridIndex = positionToGridMap(position);
             if (gridPredicate(gridIndex.x, gridIndex.y))
                 return true;
             return false;

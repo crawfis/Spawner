@@ -16,7 +16,7 @@ namespace CrawfisSoftware.PointProvider
                 this.random = new System.Random();
         }
  
-        public IList<Vector3> GetNext()
+        public IList<Vector3> GetNextSet()
         {
             return new Vector3[1] { new Vector3((float)random.NextDouble(), yValue, (float)random.NextDouble()) };
         }
