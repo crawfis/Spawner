@@ -1258,8 +1258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a8f01c3b2cc59419c8406fe30ccc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 2
   prefab: {fileID: 5484777160479521825, guid: 66aab42f3edf0bb45a5bb451308f442d, type: 3}
   parentGO: {fileID: 2098778120}
+  polygonSides: 7
+  includeCenter: 1
+  minSpawnNumber: 2
+  maxSpawnNumber: 8
 --- !u!4 &2098778120
 Transform:
   m_ObjectHideFlags: 0
