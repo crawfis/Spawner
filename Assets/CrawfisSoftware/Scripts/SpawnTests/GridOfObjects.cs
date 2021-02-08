@@ -11,6 +11,8 @@ namespace CrawfisSoftware.SpawnerTest
         [SerializeField] [Range(2, 256)] private int numberAlongX = 10;
         [SerializeField] [Range(2, 256)] private int numberAlongZ = 10;
         [SerializeField] private GameObject[] prefabs;
+        [Range(1,10)]
+        [SerializeField] private int numberOfStacks = 1;
         [SerializeField] private Bounds bounds;
         [SerializeField] private Vector2 padding;
         [SerializeField] private string tileName = "TileOfObjects_0000";
@@ -69,7 +71,8 @@ namespace CrawfisSoftware.SpawnerTest
 
             var secondPrefabSpawner = new SpawnerMaybe(new PrefabGeneratorInstantiation(prefabs[1]), secondPrefabModifiers, MiddleOnly);
 
-            var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
+            //var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
+            var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier });
             //var prefabSpawner = new Spawner(new PrefabSelectorInstantiation(prefabs[0]), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
             var rootObjectModifiers = new List<IPrefabModifierAsync>() { prefabSpawner };
             var emptySpawner = new SpawnerAndModifier(new PrefabGeneratorEmptyGameObject(), rootObjectModifiers);
@@ -77,12 +80,18 @@ namespace CrawfisSoftware.SpawnerTest
             tileBase = new GameObject(tileName);
             //var positions = DeterminePositions();
             //var positions = new PointProviderGrid(numberAlongX, numberAlongZ, bounds.size, bounds.center);
-            var enumerable = CreatePoints2D.Grid(numberAlongX, numberAlongZ, new Vector2(bounds.size.x, bounds.size.z), new Vector2(bounds.center.x, bounds.center.z));
-            var enumerable2 = Point2DTransforms.Jitter(enumerable, new Vector2(0.1f, 0.1f));
-            var enumerable3 = Point2DTransforms.MirrorHorizontal(enumerable2);
-            var enumerable4 = Point2DTransforms.MirrorVertical(enumerable3);
-            var enumerable5 = EnumerableHelpers.Shuffle(enumerable4.ToList());
-            var enumerable6 = Point2DTransforms.LiftXZto3D(enumerable5, 0);
+            //var enumerable = CreatePoints2D.Grid(numberAlongX, numberAlongZ, new Vector2(bounds.size.x, bounds.size.z), new Vector2(bounds.center.x, bounds.center.z));
+            //var enumerable2 = Point2DTransforms.Jitter(enumerable, new Vector2(0.1f, 0.1f));
+            var discSampler = new PoissonDiscSampler(tileSizeOutputOnly.x, tileSizeOutputOnly.y, bounds.size.x + padding.x);
+            var enumerable2 = discSampler.Samples();
+            //var enumerable3 = Point2DTransforms.MirrorHorizontal(enumerable2);
+            //var enumerable4 = Point2DTransforms.MirrorVertical(enumerable3);
+            //var enumerable5 = EnumerableHelpers.Shuffle(enumerable4.ToList());
+            var enumerable6 = Point2DTransforms.LiftXZto3D(enumerable2, 0);
+            //var enumerable6 = StackedObjectsPointProvider.DuplicateInY(enumerable2, (i) =>
+            //{ return (int)((float)(i % numberAlongZ) * (float)numberOfStacks / (float)(numberAlongX - 1)); },
+            //{ return (int)((i % numberAlongZ)); },
+            //0, bounds.extents.y);
             foreach (var gameObject in emptySpawner.SpawnStream(enumerable6, tileBase.transform))
             {
                 ;

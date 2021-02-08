@@ -14,8 +14,7 @@ namespace CrawfisSoftware
         /// <returns>An enumeration of the list elements.</returns>
         public static IEnumerable<T> Shuffle<T>(IList<T> finiteList, System.Random random = null)
         {
-            if (random == null)
-                random = new System.Random();
+            random ??= new System.Random();
 
             int count = finiteList.Count;
             var permutation = new int[count];

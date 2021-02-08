@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1a0f8296887ae4fac58f483a2ae92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberAlongX: 13
-  numberAlongZ: 14
+  numberAlongX: 7
+  numberAlongZ: 15
   prefabs:
   - {fileID: 4601970924090094858, guid: bcb0ff4cfbcd735468e3433ad0464e05, type: 3}
   - {fileID: 4601970924090094858, guid: bcb0ff4cfbcd735468e3433ad0464e05, type: 3}
@@ -165,6 +165,7 @@ MonoBehaviour:
   - {fileID: 811683950803208610, guid: d910c4466e962364d8bc6fd817369dac, type: 3}
   - {fileID: 9192007184465038713, guid: 635042d2568c2384a9ac443180caa51e, type: 3}
   - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  numberOfStacks: 5
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.35, y: 0.8, z: 0.35}
@@ -177,7 +178,7 @@ MonoBehaviour:
   maxScale: {x: 1, y: 1, z: 1}
   minColorShift: {r: 0.26415092, g: 0.14079742, b: 0.14079742, a: 0}
   maxColorShift: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
-  tileSizeOutputOnly: {x: 9.099999, y: 9.8}
+  tileSizeOutputOnly: {x: 4.9, y: 10.5}
   materialList:
   - {fileID: 2100000, guid: c836ef42cad597d4aafe6f9817420231, type: 2}
   - {fileID: 2100000, guid: 8efa107b58bbc214183792a4030e4637, type: 2}
@@ -551,13 +552,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.14626408, y: -0.203044, z: 0.030689389, w: 0.9676974}
-  m_LocalPosition: {x: 7.31, y: 2.17, z: -1.65}
+  m_LocalRotation: {x: 0.17742799, y: -0.2019474, z: 0.03722826, w: 0.9624711}
+  m_LocalPosition: {x: 7.35, y: 9.3, z: -19.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.19, y: -23.7, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.89, y: -23.7, z: 0}
 --- !u!1 &1894898840
 GameObject:
   m_ObjectHideFlags: 0
