@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CrawfisSoftware.PointProvider
@@ -68,6 +69,23 @@ namespace CrawfisSoftware.PointProvider
             while (true)
             {
                 yield return new Vector2((float)random.NextDouble(), (float)random.NextDouble());
+            }
+        }
+
+        /// <summary>
+        /// Given a stream of points (2D), determine which ones to ouput.
+        /// </summary>
+        /// <param name="stream">An IEnumerable of Vector2's</param>
+        /// <param name="oracle">A System.Predicate function. If true, keep (output) the Vector2.</param>
+        /// <returns>A stream of points (2D) which is a subset of the initial input.</returns>
+        public static IEnumerable<Vector2> MaskedEnumeration(IEnumerable<Vector2> stream, Predicate<Vector2> oracle)
+        {
+            foreach(Vector2 point in stream)
+            {
+                if (oracle(point))
+                {
+                    yield return point;
+                }
             }
         }
     }
