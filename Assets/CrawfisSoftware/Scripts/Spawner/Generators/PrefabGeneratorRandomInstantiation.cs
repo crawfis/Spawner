@@ -25,7 +25,7 @@ namespace CrawfisSoftware.Spawner
         }
 
         /// <inheritdoc/>
-        public async Task<GameObject> CreateAsync(Vector3 position, SpawnerAndModifier spawner, int count)
+        public async Task<GameObject> CreateAsync(Vector3 position, SpawnerAndModifier spawner, int counter)
         {
             var prefab = prefabList[random.Next(prefabList.Count)];
             GameObject newGameObject = UnityEngine.Object.Instantiate<GameObject>(prefab);

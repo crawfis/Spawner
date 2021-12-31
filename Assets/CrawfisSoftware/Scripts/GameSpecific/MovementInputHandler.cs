@@ -5,15 +5,9 @@ namespace CrawfisSoftware.Spawner
 {
     public class MovementInputHandler : MonoBehaviour
     {
-        private Rigidbody rigidBody;
         private Vector2 movementVector;
         [SerializeField] float speed = 10;
         [SerializeField] Rigidbody rigidBodyToMove;
-
-        //void Start()
-        //{
-        //    rigidBodyToMove = GetComponent<Rigidbody>();
-        //}
 
         public void OnMove(InputValue movementValue)
         {

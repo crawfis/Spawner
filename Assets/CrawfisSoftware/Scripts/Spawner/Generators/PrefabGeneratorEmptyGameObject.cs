@@ -9,7 +9,7 @@ namespace CrawfisSoftware.Spawner
     public class PrefabGeneratorEmptyGameObject : IPrefabGeneratorAsync
     {
         /// <inheritdoc/>
-        public async Task<GameObject> CreateAsync(Vector3 position, SpawnerAndModifier spawner, int count)
+        public async Task<GameObject> CreateAsync(Vector3 position, SpawnerAndModifier spawner, int counter)
         {
             var newGameObject = new GameObject();
             newGameObject.transform.localPosition = position;
