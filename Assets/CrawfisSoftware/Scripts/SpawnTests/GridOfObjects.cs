@@ -1,5 +1,6 @@
 using CrawfisSoftware.PointProvider;
 using CrawfisSoftware.Spawner;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -28,6 +29,7 @@ namespace CrawfisSoftware.SpawnerTest
 
         private System.Random random = new System.Random();
         private GameObject tileBase;
+        private Vector2 tileCenter;
 
         private async System.Threading.Tasks.Task Start()
         {
@@ -35,6 +37,7 @@ namespace CrawfisSoftware.SpawnerTest
             // Todo: Move to an Editor Script
             // Todo: Move from a grid to a list of spawnLocations that can be filled with a grid.
             // Todo: Add code to save hierarchy as a tile prefab.
+            tileCenter = 0.7f * new Vector2((float)numberAlongX / 2f, (float)numberAlongZ/2f);
             await CreateTileAsync();
             UnityEditor.PrefabUtility.SaveAsPrefabAsset(tileBase, @"Assets\Prefabs\Tile.prefab", out bool success);
             Debug.Log(success.ToString());
@@ -58,7 +61,7 @@ namespace CrawfisSoftware.SpawnerTest
             //var colorModifier = new PrefabColorModifier(minColorShift, maxColorShift);
             var colorModifier = new PrefabMaterialSelectionModifier(materialList);
             prefabModifiers.Add(colorModifier);
-            var secondGridOffset = new PrefabTransformModifier(new Vector3(0.0f, 0.8f, 0.0f), Vector3.zero, Vector3.one);
+            var secondGridOffset = new PrefabTransformModifier(new Vector3(0.0f, 0.65f, 0.0f), Vector3.zero, Vector3.one);
             var secondPrefabTransformModifier = new PrefabTransformModifierComposite();
             secondPrefabTransformModifier.AddTransformModifier(secondGridOffset);
             secondPrefabTransformModifier.AddTransformModifier(jitter);
@@ -72,7 +75,7 @@ namespace CrawfisSoftware.SpawnerTest
             //var secondPrefabSpawner = new SpawnerMaybe(new PrefabGeneratorInstantiation(prefabs[1]), secondPrefabModifiers, MiddleOnly);
 
             //var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
-            var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier });
+            var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorRandomInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier });
             //var prefabSpawner = new Spawner(new PrefabSelectorInstantiation(prefabs[0]), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
             var rootObjectModifiers = new List<IPrefabModifierAsync>() { prefabSpawner };
             var emptySpawner = new SpawnerAndModifier(new PrefabGeneratorEmptyGameObject(), rootObjectModifiers);
@@ -87,8 +90,9 @@ namespace CrawfisSoftware.SpawnerTest
             //var enumerable3 = Point2DTransforms.MirrorHorizontal(enumerable2);
             //var enumerable4 = Point2DTransforms.MirrorVertical(enumerable3);
             //var enumerable5 = EnumerableHelpers.Shuffle(enumerable4.ToList());
-            var enumerable6 = Point2DTransforms.LiftXZto3D(enumerable2, 0);
-            var enumerable7 = StackedObjectsPointProvider.DuplicateInY(enumerable2, StackHeight);
+            var enumerable5 = CreatePoints2D.MaskedEnumeration(enumerable2, CarveOutCenter);
+            //var enumerable6 = Point2DTransforms.LiftXZto3D(enumerable5, 0);
+            var enumerable7 = StackedObjectsPointProvider.DuplicateInY(enumerable5, StackHeight, 0, 0.65f);
             //var enumerable7 = StackedObjectsPointProvider.DuplicateInY(enumerable2, (i) =>
             //{ return (int)((float)(i % numberAlongZ) * (float)numberOfStacks / (float)(numberAlongX - 1)); },
             //{ return (int)((i % numberAlongZ)); },
@@ -101,9 +105,20 @@ namespace CrawfisSoftware.SpawnerTest
             await System.Threading.Tasks.Task.CompletedTask;
         }
 
+        private bool CarveOutCenter(Vector2 position)
+        {
+            float distance = Vector2.SqrMagnitude(tileCenter - position);
+            if (distance < 6f) return false;
+            return true;
+        }
+
         private int StackHeight(int index)
         {
             return numberOfStacks;
+            int i = index % numberAlongZ;
+            if (i < 3 || i > numberAlongZ - 2)
+                return numberOfStacks;
+            return (index % 2);
         }
         private bool MiddleOnly(Vector3 position, GameObject parent)
         {

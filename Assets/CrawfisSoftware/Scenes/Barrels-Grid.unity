@@ -152,13 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1a0f8296887ae4fac58f483a2ae92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberAlongX: 7
-  numberAlongZ: 15
+  numberAlongX: 109
+  numberAlongZ: 76
   prefabs:
   - {fileID: 4601970924090094858, guid: bcb0ff4cfbcd735468e3433ad0464e05, type: 3}
   - {fileID: 4601970924090094858, guid: bcb0ff4cfbcd735468e3433ad0464e05, type: 3}
   - {fileID: 1512436426971412735, guid: 44e9930c42b0eba42a77de156acd4973, type: 3}
-  - {fileID: 5204983914390050286, guid: b2831dc21d887d74999860cbd5af144d, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
   - {fileID: 1512436426971412735, guid: 44e9930c42b0eba42a77de156acd4973, type: 3}
   - {fileID: 7111709189285194181, guid: 1130ab23605f2ed438be5679ec24a19f, type: 3}
   - {fileID: 7220785263188008204, guid: 7eb184db2b5aec04494c7021791c9776, type: 3}
@@ -168,10 +168,10 @@ MonoBehaviour:
   numberOfStacks: 5
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.35, y: 0.8, z: 0.35}
+    m_Extent: {x: 0.35, y: 0.65, z: 0.35}
   padding: {x: 0, y: 0}
   tileName: TileOfBarrels_0000
-  maxJitter: {x: 0.1, y: 0, z: 0.1}
+  maxJitter: {x: 0, y: 0, z: 0}
   minRotation: {x: 0, y: 0, z: 0}
   maxRotation: {x: 0, y: 360, z: 0}
   minScale: {x: 1, y: 1, z: 1}
