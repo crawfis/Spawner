@@ -8,9 +8,12 @@ namespace CrawfisSoftware
     /// </summary>
     public class GameObjectPooler : PoolerBase<GameObject>
     {
+        private readonly  GameObject _prefab;
+
         public GameObjectPooler(GameObject prefab, int initialSize = 100, int maxPersistentSize = 10000, bool collectionChecks = false)
-            : base(prefab, initialSize, maxPersistentSize, collectionChecks)
+            : base(initialSize, maxPersistentSize, collectionChecks)
         {
+            this._prefab = prefab;
         }
 
         protected override GameObject CreateNewPoolInstance() => Object.Instantiate(_prefab);
