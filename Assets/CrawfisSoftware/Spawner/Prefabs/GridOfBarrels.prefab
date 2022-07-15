@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2739842530633559554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2739842530633559552}
+  - component: {fileID: 2739842530633559553}
+  m_Layer: 0
+  m_Name: GridOfBarrels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2739842530633559552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739842530633559554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2739842530633559553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739842530633559554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec1a0f8296887ae4fac58f483a2ae92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberAlongX: 35
+  numberAlongZ: 32
+  prefabs:
+  - {fileID: 4601970924090094858, guid: bcb0ff4cfbcd735468e3433ad0464e05, type: 3}
+  - {fileID: 4601970924090094858, guid: bcb0ff4cfbcd735468e3433ad0464e05, type: 3}
+  - {fileID: 1512436426971412735, guid: 44e9930c42b0eba42a77de156acd4973, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  - {fileID: 1512436426971412735, guid: 44e9930c42b0eba42a77de156acd4973, type: 3}
+  - {fileID: 7111709189285194181, guid: 1130ab23605f2ed438be5679ec24a19f, type: 3}
+  - {fileID: 7220785263188008204, guid: 7eb184db2b5aec04494c7021791c9776, type: 3}
+  - {fileID: 811683950803208610, guid: d910c4466e962364d8bc6fd817369dac, type: 3}
+  - {fileID: 9192007184465038713, guid: 635042d2568c2384a9ac443180caa51e, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  - {fileID: 5357819286471581899, guid: 6b0b3d396c277d74ca2e517b7189c305, type: 3}
+  numberOfStacks: 5
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.35, y: 0.8, z: 0.35}
+  padding: {x: 0, y: 0}
+  tileName: TileOfBarrels_0000
+  maxJitter: {x: 0.1, y: 0, z: 0.1}
+  minRotation: {x: 0, y: 0, z: 0}
+  maxRotation: {x: 0, y: 360, z: 0}
+  minScale: {x: 1, y: 1, z: 1}
+  maxScale: {x: 1, y: 1, z: 1}
+  minColorShift: {r: 0.26415092, g: 0.14079742, b: 0.14079742, a: 0}
+  maxColorShift: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
+  tileSizeOutputOnly: {x: 4.9, y: 10.5}
+  materialList:
+  - {fileID: 2100000, guid: c836ef42cad597d4aafe6f9817420231, type: 2}
+  - {fileID: 2100000, guid: 8efa107b58bbc214183792a4030e4637, type: 2}
+  - {fileID: 2100000, guid: e3137bc81d5d90044b2c1e79154eeb32, type: 2}
+  - {fileID: 2100000, guid: f32c6b31c9e021d4c8a0f6361e716573, type: 2}
+  - {fileID: 2100000, guid: 9966e7b3ecd0b3e40953ee8859904e24, type: 2}
+  - {fileID: 2100000, guid: 2b8063d9f4047104fb368f3edf9317ac, type: 2}
+  - {fileID: 2100000, guid: 931e1ca29c27dea45ab3308df2018ce9, type: 2}
+  - {fileID: 2100000, guid: adaea6559cec3fb4d8684d23ba23d3d7, type: 2}
+  - {fileID: 2100000, guid: 735add5fcef4af0418406f770dc7d088, type: 2}
