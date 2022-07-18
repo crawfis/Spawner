@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 634500045}
   - component: {fileID: 634500044}
   m_Layer: 0
-  m_Name: TrickleSpawnCreator (01)
+  m_Name: TrickleSpawnCreatorPooled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,9 +566,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce81a823862f7a41adb6d007edfa04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenSpawns: 0.03
+  timeBetweenSpawns: 0.13
   spawnLocation: {x: 1, y: 0, z: 0}
-  prefab: {fileID: 1008774749}
+  prefab: {fileID: 5003260960099184554, guid: f5fda09951e7c264dbbe0379cc584eda, type: 3}
   parentGO: {fileID: 634500043}
 --- !u!4 &634500045
 Transform:
@@ -1131,6 +1131,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3445296359869204870, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
@@ -1214,6 +1215,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3445296359869204870, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1475889819}
   m_SourcePrefab: {fileID: 100100000, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
 --- !u!1 &1912746780
 GameObject:
@@ -1318,6 +1323,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5003260960099184545, guid: ead9a19d59ac97c4eb285b7685366b84, type: 3}
@@ -1389,6 +1395,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 7afc7315da40bc847b743f9b7fad3cfd, type: 2}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ead9a19d59ac97c4eb285b7685366b84, type: 3}
 --- !u!1 &2098778118
 GameObject:
@@ -1446,6 +1453,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1865589889314792642, guid: 66aab42f3edf0bb45a5bb451308f442d, type: 3}
@@ -1517,4 +1525,5 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 66aab42f3edf0bb45a5bb451308f442d, type: 3}

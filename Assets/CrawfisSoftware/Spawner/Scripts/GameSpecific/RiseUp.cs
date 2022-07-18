@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace CrawfisSoftware.Spawner
+namespace CrawfisSoftware.GameSpecific
 {
     public class RiseUp : MonoBehaviour
     {

@@ -33,7 +33,7 @@ namespace CrawfisSoftware.SpawnerTest
 
         private async System.Threading.Tasks.Task Start()
         {
-            // Todo: Switch to Addressables??? (tile of assetReferences, tile of labels, or done at editor time?)
+            // Todo: Switch to Addressables??? (tile of assetReferences, tile of _labels, or done at editor time?)
             // Todo: Move to an Editor Script
             // Todo: Move from a grid to a list of spawnLocations that can be filled with a grid.
             // Todo: Add code to save hierarchy as a tile prefab.

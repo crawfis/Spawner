@@ -16,7 +16,9 @@ namespace CrawfisSoftware.SpawnerTest
 
         void Start()
         {
-            spawner = new SpawnerAndModifier(new PrefabGeneratorPooled(prefab), new List<IPrefabModifierAsync>());
+            var pooler = new PrefabGeneratorPooled(new PrefabGeneratorInstantiation(prefab),1000);
+            GameSpecific.AssetManagerPooled._poolerInstance = pooler;
+            spawner = new SpawnerAndModifier(pooler, new List<IPrefabModifierAsync>());
             StartCoroutine(SpawnControl());
         }
 
