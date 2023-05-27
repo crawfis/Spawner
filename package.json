@@ -1,0 +1,22 @@
+{
+	"name": "com.crawfissoftware.spawner",
+	"version": "1.0.1",
+	"displayName": "Flexible Programmable Spawner",
+	"description": "Tree or graph-based spawner that allows pre and post control",
+	"unity": "2019.4",
+	"unityRelease": "10f1",
+	"dependencies": {
+		"com.unity.addressables": "1.14.2"
+	},
+	"keywords": [
+		"spawn",
+		"spawner",
+		"Asset Management",
+		"Addressables"
+	],
+	"author": {
+		"name": "Crawfis, Roger",
+		"email": "roger.crawfis@gmail.com",
+		"url": "https://github.com/crawfis"
+	}
+}

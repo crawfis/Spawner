@@ -1,0 +1,19 @@
+{
+    "name": "CrawfisSoftware.Spawner",
+    "rootNamespace": "CrawfisSoftware.Spawner",
+    "references": [
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "CrawfisSoftware.AssetManagement",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
