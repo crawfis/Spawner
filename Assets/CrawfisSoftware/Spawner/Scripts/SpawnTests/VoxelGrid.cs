@@ -29,16 +29,16 @@ namespace CrawfisSoftware.SpawnerTest
             GameSpecific.AssetManagerPooled._poolerInstance = pooler;
             var bottomPrefabSpawner = new SpawnerAndModifier(pooler, new List<IPrefabModifierAsync>() { });
 
-            var tileBase = new GameObject(tileName + "Bottom");
+            var tileBase = new GameObject(tileName);
             var enumerable2 = CreatePoints2D.Grid(numberAlongX, numberAlongZ, new Vector2(bounds.size.x, bounds.size.z), new Vector2(bounds.center.x, bounds.center.z));
-            var enumerableTop = Point2DTransforms.LiftXZto3D(enumerable2, 0);
-            var enumerable7 = StackedObjectsPointProvider.DuplicateInY(enumerable2, StackHeight, 0, bounds.size.y);
+            //var enumerableTop = Point2DTransforms.LiftXZto3D(enumerable2, 0);
+            //var enumerable7 = StackedObjectsPointProvider.DuplicateInY(enumerable2, StackHeight, 0, bounds.size.y);
             //foreach (var gameObject in bottomPrefabSpawner.SpawnStream(enumerable7, tileBase.transform))
             //{
             //    ;
             //}
-            var topTileBase = new GameObject(tileName + "Top");
-            var topPrefabTransformModifier = new PrefabTransformModifierComposite();
+            //var topTileBase = new GameObject(tileName + "Top");
+            //var topPrefabTransformModifier = new PrefabTransformModifierComposite();
             var topAssetProvider = new PrefabGeneratorSequentialInstantiation(_topPrefabs);
             var topPrefabSpawner = new SpawnerAndModifier(topAssetProvider, new List<IPrefabModifierAsync>() { });
             var voxelPillarSpawner = new VoxelPillar(1, 0, topPrefabSpawner, bottomPrefabSpawner);
@@ -49,7 +49,7 @@ namespace CrawfisSoftware.SpawnerTest
                 float y = StackHeight(index++);
                 Vector3 position = new Vector3(position2D.x, y, position2D.y);
                 //var _ = topPrefabSpawner.SpawnAsync(position, topTileBase.transform);
-                var _ = voxelPillarSpawner.SpawnAsync(position, topTileBase.transform);
+                var _ = voxelPillarSpawner.SpawnAsync(position, tileBase.transform);
             }
             await System.Threading.Tasks.Task.CompletedTask;
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace CrawfisSoftware.SpawnerTest
+namespace CrawfisSoftware.Spawner
 {
     public class VoxelPillar : ISpawner
     {
