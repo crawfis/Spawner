@@ -75,7 +75,10 @@ namespace CrawfisSoftware.SpawnerTest
             //var secondPrefabSpawner = new SpawnerMaybe(new PrefabGeneratorInstantiation(prefabs[1]), secondPrefabModifiers, MiddleOnly);
 
             //var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorSequentialInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
-            var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorRandomInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier });
+            var pooler = new PrefabGeneratorPooled(new PrefabGeneratorRandomInstantiation(prefabs), 1000);
+            GameSpecific.AssetManagerPooled._poolerInstance = pooler;
+            var prefabSpawner = new SpawnerAndModifier(pooler, new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier });
+            //var prefabSpawner = new SpawnerAndModifier(new PrefabGeneratorRandomInstantiation(prefabs), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier });
             //var prefabSpawner = new Spawner(new PrefabSelectorInstantiation(prefabs[0]), new List<IPrefabModifierAsync>() { prefabTransformModifier, colorModifier, secondPrefabSpawner });
             var rootObjectModifiers = new List<IPrefabModifierAsync>() { prefabSpawner };
             var emptySpawner = new SpawnerAndModifier(new PrefabGeneratorEmptyGameObject(), rootObjectModifiers);
@@ -98,6 +101,7 @@ namespace CrawfisSoftware.SpawnerTest
             //{ return (int)((i % numberAlongZ)); },
             //{ return numberOfStacks; },
             //0, bounds.extents.y);
+            var poolSpawner = new PooledSpawner(emptySpawner);
             foreach (var gameObject in emptySpawner.SpawnStream(enumerable7, tileBase.transform))
             {
                 ;

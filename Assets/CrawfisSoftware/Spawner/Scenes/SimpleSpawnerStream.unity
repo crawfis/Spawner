@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -191,9 +191,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245458809}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &245458812
@@ -337,9 +345,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374638157}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &374638160
@@ -672,9 +688,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -863,9 +887,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219075743}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1219075746
@@ -1131,7 +1163,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3445296359869204870, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
@@ -1206,6 +1238,10 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0.39
       objectReference: {fileID: 0}
+    - target: {fileID: 3445296359869204876, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3445296359869204877, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
       propertyPath: m_Name
       value: MovingSpawner
@@ -1215,10 +1251,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3445296359869204870, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1475889819}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3445296359869204877, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 190889398}
   m_SourcePrefab: {fileID: 100100000, guid: ffcba547fc5520d47bb7174e6a1af166, type: 3}
 --- !u!1 &1912746780
 GameObject:
@@ -1247,9 +1288,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912746780}
   m_Material: {fileID: 13400000, guid: 33f168b9abf933342b3f01eaad693655, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -1323,7 +1372,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5003260960099184545, guid: ead9a19d59ac97c4eb285b7685366b84, type: 3}
@@ -1374,6 +1423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrictionlessCapsule
       objectReference: {fileID: 0}
+    - target: {fileID: 5003260960099184554, guid: ead9a19d59ac97c4eb285b7685366b84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5003260960099184555, guid: ead9a19d59ac97c4eb285b7685366b84, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1395,7 +1448,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 7afc7315da40bc847b743f9b7fad3cfd, type: 2}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5003260960099184554, guid: ead9a19d59ac97c4eb285b7685366b84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008774750}
+    - targetCorrespondingSourceObject: {fileID: 5003260960099184554, guid: ead9a19d59ac97c4eb285b7685366b84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008774758}
   m_SourcePrefab: {fileID: 100100000, guid: ead9a19d59ac97c4eb285b7685366b84, type: 3}
 --- !u!1 &2098778118
 GameObject:
@@ -1429,10 +1490,10 @@ MonoBehaviour:
   radius: 2
   prefab: {fileID: 5484777160479521825, guid: 66aab42f3edf0bb45a5bb451308f442d, type: 3}
   parentGO: {fileID: 2098778120}
-  polygonSides: 5
+  polygonSides: 15
   includeCenter: 0
-  minSpawnNumber: 5
-  maxSpawnNumber: 5
+  minSpawnNumber: 7
+  maxSpawnNumber: 15
 --- !u!4 &2098778120
 Transform:
   m_ObjectHideFlags: 0
@@ -1453,7 +1514,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1865589889314792642, guid: 66aab42f3edf0bb45a5bb451308f442d, type: 3}
@@ -1504,6 +1565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostDecorator
       objectReference: {fileID: 0}
+    - target: {fileID: 5484777160479521825, guid: 66aab42f3edf0bb45a5bb451308f442d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5960212079272272803, guid: 66aab42f3edf0bb45a5bb451308f442d, type: 3}
       propertyPath: speed
       value: 12
@@ -1525,5 +1590,7 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66aab42f3edf0bb45a5bb451308f442d, type: 3}
