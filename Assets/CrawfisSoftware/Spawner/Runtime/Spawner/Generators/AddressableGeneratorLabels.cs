@@ -1,12 +1,11 @@
-﻿using CrawfisSoftware.Spawner;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
 
-namespace GTMY.Spawner
+namespace CrawfisSoftware.Spawner
 {
     /// <summary>
     /// Provide audio clips based on addressable _labels or keys.
