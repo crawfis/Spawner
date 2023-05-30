@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CrawfisSoftware.Spawner
 {
-    internal class PooledSpawner : PoolerBaseAsync<GameObject>
+    public class PooledSpawner : PoolerBaseAsync<GameObject>
     {
         private readonly ISpawner _spawner;
 
