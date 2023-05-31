@@ -1,5 +1,4 @@
-﻿using CrawfisSoftware.Spawner;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -24,11 +23,11 @@ namespace CrawfisSoftware.Spawner
         {
             GameObject pillar = new GameObject("Pillar");
             pillar.transform.SetParent(parentTransform, false);
-            var _ = _realTopSpawner.SpawnAsync(position, pillar.transform);
+            var _ = _realTopSpawner?.SpawnAsync(position, pillar.transform);
             float y = position.y - _voxelHeight;
             while(y > _skirtBaseHeight)
             {
-                _ = _realBottomSpawner.SpawnAsync(new Vector3(position.x, y,position.z), pillar.transform);
+                _ = _realBottomSpawner?.SpawnAsync(new Vector3(position.x, y,position.z), pillar.transform);
                 y -= _voxelHeight;
             }
 

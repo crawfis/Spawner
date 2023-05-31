@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 06180345328030e4d8f1c2d5dbe077c1
+  m_SerializeEntries:
+  - m_GUID: 820ce4179571f354e92eddaeaa26b827
+    m_Address: Assets/CrawfisSoftware/Spawner/Prefabs/Voxels/CubeGreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - top
+    - cube
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7485da50187ffdd479ce6ae24543d0bd
+    m_Address: Assets/CrawfisSoftware/Spawner/Prefabs/Voxels/CubeGreenDark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - top
+    - cube
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12ea70ff08ddc2e4bbb3afa432227822
+    m_Address: Assets/CrawfisSoftware/Spawner/Prefabs/Voxels/CubeGreenLight.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - top
+    - cube
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: adb0b02ee6daeee40ac4d937ac91ac28
+    m_Address: Assets/CrawfisSoftware/Spawner/Prefabs/Voxels/CubeBrown.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - bottom
+    - cube
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc5345ebe99880f44a961d1178ee2d44
+    m_Address: Assets/CrawfisSoftware/Spawner/Prefabs/Voxels/CubeBrownDark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - bottom
+    - cube
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f432a2426899b814cb5eb99cc0b35048
+    m_Address: Assets/CrawfisSoftware/Spawner/Prefabs/Voxels/CubeBrownLight.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - bottom
+    - cube
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cd265dd5193f6c546b6865fe6c44b1cf, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 99ee371fadb70e248a94263a740966d5, type: 2}
+    - {fileID: 11400000, guid: d9460e8115cbb9045bdc1ae8ea103bc4, type: 2}

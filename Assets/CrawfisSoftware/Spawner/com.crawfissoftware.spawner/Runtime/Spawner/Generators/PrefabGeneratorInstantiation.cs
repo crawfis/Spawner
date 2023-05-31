@@ -22,8 +22,11 @@ namespace CrawfisSoftware.Spawner
         /// <inheritdoc/>
         public async Task<GameObject> CreateAsync(Vector3 position, SpawnerAndModifier spawner, int counter)
         {
+#if UNITY_EDITOR
             GameObject newGameObject = UnityEditor.PrefabUtility.InstantiatePrefab(prefab) as GameObject;
-            //GameObject newGameObject = UnityEngine.Object.Instantiate<GameObject>(prefab);
+#else
+            GameObject newGameObject = UnityEngine.Object.Instantiate<GameObject>(prefab);
+#endif
             newGameObject.transform.localPosition = position;
             //return newGameObject;
             //await Task.CompletedTask;  return newGameObject;

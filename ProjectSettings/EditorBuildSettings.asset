@@ -9,4 +9,5 @@ EditorBuildSettings:
     path: Assets/CrawfisSoftware/Spawner/Scenes/Barrels-Grid.unity
     guid: 88f76c1d389eed2449721ab7667dfc1b
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: faecb7731e10dbe4ea88c5433ecd333f, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: c39be761f30dc69489de4019f84530a6, type: 2}

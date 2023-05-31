@@ -2,7 +2,6 @@ using CrawfisSoftware.PointProvider;
 using CrawfisSoftware.Spawner;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace CrawfisSoftware.SpawnerTest
@@ -39,8 +38,10 @@ namespace CrawfisSoftware.SpawnerTest
             // Todo: Add code to save hierarchy as a tile prefab.
             tileCenter = 0.7f * new Vector2((float)numberAlongX / 2f, (float)numberAlongZ/2f);
             await CreateTileAsync();
-            UnityEditor.PrefabUtility.SaveAsPrefabAsset(tileBase, @"Assets\Prefabs\Tile.prefab", out bool success);
-            Debug.Log(success.ToString());
+//#if UNITY_EDITOR
+//            UnityEditor.PrefabUtility.SaveAsPrefabAsset(tileBase, @"Assets\Prefabs\Tile.prefab", out bool success);
+//            Debug.Log(success.ToString());
+//#endif
         }
 
         public async System.Threading.Tasks.Task CreateTileAsync()

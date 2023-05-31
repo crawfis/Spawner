@@ -16,9 +16,11 @@ namespace CrawfisSoftware.SpawnerTest
         [SerializeField] private int numberOfStacks = 5;
         [SerializeField] private Bounds bounds;
         [SerializeField] private string tileName = "VoxelGrid";
+        [SerializeField] private PrefabGeneratorAdaptor _prefabProvider;
 
         private async System.Threading.Tasks.Task Start()
         {
+            await _prefabProvider.Initialize();
             await CreateTileAsync();
         }
 
@@ -39,7 +41,8 @@ namespace CrawfisSoftware.SpawnerTest
             //}
             //var topTileBase = new GameObject(tileName + "Top");
             //var topPrefabTransformModifier = new PrefabTransformModifierComposite();
-            var topAssetProvider = new PrefabGeneratorSequentialInstantiation(_topPrefabs);
+            //var topAssetProvider = new PrefabGeneratorSequentialInstantiation(_topPrefabs);
+            var topAssetProvider = _prefabProvider;
             var topPrefabSpawner = new SpawnerAndModifier(topAssetProvider, new List<IPrefabModifierAsync>() { });
             var voxelPillarSpawner = new VoxelPillar(1, 0, topPrefabSpawner, bottomPrefabSpawner);
 

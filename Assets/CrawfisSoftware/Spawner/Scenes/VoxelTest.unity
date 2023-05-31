@@ -179,11 +179,12 @@ MonoBehaviour:
   - {fileID: 1405457240488838106, guid: f432a2426899b814cb5eb99cc0b35048, type: 3}
   - {fileID: 3033902520387335003, guid: adb0b02ee6daeee40ac4d937ac91ac28, type: 3}
   - {fileID: 5993899976427069970, guid: cc5345ebe99880f44a961d1178ee2d44, type: 3}
-  numberOfStacks: 5
+  numberOfStacks: 1
   bounds:
     m_Center: {x: 0.5, y: 0.5, z: 0.5}
     m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   tileName: VoxelGrid
+  _prefabProvider: {fileID: 11400000, guid: e4f3c143a7c67d74cbeabdb305d578f8, type: 2}
 --- !u!1 &2086064469
 GameObject:
   m_ObjectHideFlags: 0
